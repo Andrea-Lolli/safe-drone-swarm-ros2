@@ -1,0 +1,36 @@
+Open Gazebo simulation:
+ros2 launch ros_gz_sim gz_sim.launch.py gz_args:="-r flying_box.sdf"
+
+Open bridge: 
+ros2 run ros_gz_bridge parameter_bridge /cmd_vel_box@geometry_msgs/msg/Twist@gz.msgs.Twist /model/drone/pose@geometry_msgs/msg/Pose@gz.msgs.Pose --ros-args -r /model/drone/pose:=/ground_truth/drone_pose
+ros2 run ros_gz_bridge parameter_bridge /cmd_vel_box@geometry_msgs/msg/Twist@gz.msgs.Twist /model/drone/pose@geometry_msgs/msg/Pose@gz.msgs.Pose /visualization_marker@visualization_msgs/msg/Marker@gz.msgs.Marker --ros-args -r /model/drone/pose:=/ground_truth/drone_pose
+
+Open RViz:
+source /opt/ros/jazzy/setup.bash
+rviz2
+
+Path Generation:
+python3 path_generator.py
+
+Heatmap Generation:
+python3 generate_heatmap.py
+
+Compile workspace:
+cd ~/safe_ws
+colcon build
+source install/setup.bash
+
+Launch mock_sensor:
+ros2 run safe_simulation mock_sensor
+
+Launch all through setup.py:
+ros2 launch safe_drone_core safe_bringup.launch.py
+ros2 launch safe_drone_core safe_bringup.launch.py num_drones:=3
+
+Launch mission_manager:
+source install/setup.bash
+ros2 run safe_drone_core mission_manager --ros-args -p drone_id:=1
+ros2 run safe_drone_core mission_manager --ros-args -p drone_id:=2
+
+Launch Mission
+ros2 topic pub --once /swarm/start std_msgs/msg/Bool "{data: true}"

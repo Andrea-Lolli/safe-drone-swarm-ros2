@@ -1,0 +1,625 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <world name="safe_world">
+        <gravity>0 0 0</gravity>
+
+        <physics name="1ms" type="ignored">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1.0</real_time_factor>
+        </physics>
+
+        <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"></plugin>
+        <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"></plugin>
+        <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
+
+        <light type="directional" name="sun">
+            <cast_shadows>true</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <direction>-0.5 0.1 -0.9</direction>
+        </light>
+		
+		<model name="ground_plane">
+            <static>true</static> 
+            <link name="link">
+                <collision name="collision">
+                    <geometry>
+                        <plane>
+                            <normal>0 0 1</normal>
+                            <size>200 200</size> </plane>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <plane>
+                            <normal>0 0 1</normal>
+                            <size>200 200</size>
+                        </plane>
+                    </geometry>
+                    <material>
+                        <ambient>0.4 0.5 0.4 1</ambient>
+                        <diffuse>0.4 0.5 0.4 1</diffuse>
+                        <specular>0.1 0.1 0.1 1</specular>
+                    </material>
+                </visual>
+            </link>
+        </model>
+
+
+		<model name="safe_zone_pad">
+            <static>true</static>
+            <pose>1 4 0.01 0 0 0</pose> 
+            <link name="link">
+                <visual name="visual">
+                    <geometry>
+                        <box><size>4.0 10.0 0.02</size></box> </geometry>
+                    <material>
+                        <ambient>0.3 0.3 0.3 1</ambient> <diffuse>0.3 0.3 0.3 1</diffuse>
+                    </material>
+                </visual>
+            </link>
+        </model>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_1</name>
+            <pose>15 15 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine Tree</uri>
+            <name>albero_2</name>
+            <pose>35 10 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_3</name>
+            <pose>25 40 0 0 0 0</pose>
+        </include>
+		
+		<include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_4</name>
+            <pose>10 0 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_5</name>
+            <pose>4.5 25 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_6</name>
+            <pose>-7 35 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_7</name>
+            <pose>7 52 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_8</name>
+            <pose>23 51 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_9</name>
+            <pose>44 32 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_10</name>
+            <pose>30 6.3 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Oak tree</uri>
+            <name>albero_11</name>
+            <pose>44 12 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine Tree</uri>
+            <name>albero_12</name>
+            <pose>15 22 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine Tree</uri>
+            <name>albero_13</name>
+            <pose>8 30.5 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine Tree</uri>
+            <name>albero_14</name>
+            <pose>-1 31 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine Tree</uri>
+            <name>albero_15</name>
+            <pose>4 14 0 0 0 0</pose>
+        </include>
+
+        <include>
+            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine Tree</uri>
+            <name>albero_16</name>
+            <pose>16 6 0 0 0 0</pose>
+        </include>
+
+		<include>
+			<uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Collapsed Fire Station </uri>
+			<name>macerie_1</name>
+            <pose>26.0 26.0 0 0 0 -0.85</pose>
+		</include>  
+		
+		<include>
+			<uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Collapsed House</uri>
+			<name>macerie_2</name>
+            <pose>7 40 0 0 0 0.67</pose>
+		</include>
+        
+
+        <model name="drone1">
+            <pose>0 0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone1/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone2">
+            <pose>0 2.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone2/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone3">
+            <pose>0 4.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone3/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone4">
+            <pose>0 6.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone4/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone5">
+            <pose>0 8.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone5/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone6">
+            <pose>2.0 0.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone6/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone7">
+            <pose>2.0 2.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone7/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone8">
+            <pose>2.0 4.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone8/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+		
+
+        <model name="drone9">
+            <pose>2.0 6.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone9/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+        <model name="drone10">
+            <pose>2.0 8.0 0.1 0 0 0</pose>
+            <static>false</static>
+            <allow_auto_disable>false</allow_auto_disable>
+
+            <link name="base_link">
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+                        <iyy>1.0</iyy><iyz>0</iyz>
+                        <izz>1.0</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <pose>0 0 0 0 0 0</pose> 
+                    <geometry>
+                        <mesh>
+                            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/X3 UAV/tip/files/meshes/x3.dae</uri>
+                            <scale>1 1 1</scale>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.2 0.2 0.2 1</ambient>
+                        <diffuse>0.2 0.2 0.2 1</diffuse>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+                </collision>
+            </link>
+
+            <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+                <link_name>base_link</link_name>
+                <topic>/drone10/cmd_vel</topic> 
+            </plugin>
+
+            <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                <publish_link_pose>false</publish_link_pose>
+                <publish_model_pose>true</publish_model_pose>
+                <use_pose_vector_msg>false</use_pose_vector_msg>
+                <update_frequency>10</update_frequency>
+            </plugin>
+        </model>
+
+    </world>
+</sdf>
