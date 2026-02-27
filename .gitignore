@@ -1,6 +1,8 @@
-install/
-build/
-log/
+safe_ws/build/
+safe_ws/install/
+safe_ws/log/
+safe_ws/mission_results/*.csv
+safe_ws/mission_paths/*.txt
 
 __pycache__/
 *.py[cod]
