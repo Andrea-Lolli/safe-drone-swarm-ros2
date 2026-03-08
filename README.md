@@ -87,4 +87,8 @@ cd ~/safe-drone-swarm-ros2/safe_ws
 python3 generate_heatmap.py
 ```
 ****
-Developed as part of the SAFE Project Architecture.
+
+## License
+Developed as part of the SAFE Project for university of Camerino, this program was developed for academic research and benchmarking purposes. Feel free to fork, modify, and utilize the code for your own High-Performance Computing learning!
+
+
